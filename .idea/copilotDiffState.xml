@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/.eleventy.js">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/.eleventy.js" />
+              <option name="updatedContent" value="module.exports = function (eleventyConfig) {&#10;  eleventyConfig.addPassthroughCopy(&quot;src/assets&quot;);&#10;  eleventyConfig.addWatchTarget(&quot;src/assets/css/tailwind.css&quot;);&#10;  return {&#10;    dir: { input: &quot;src&quot;, output: &quot;_site&quot;, includes: &quot;_includes&quot; }&#10;  };&#10;};" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/.github/workflows/gh-pages.yml">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/.github/workflows/gh-pages.yml" />
+              <option name="updatedContent" value="name: Deploy GitHub Pages&#10;on: &#10;  push: &#10;    branches: [ main ]&#10;  workflow_dispatch: {}&#10;permissions: &#10;  contents: read&#10;  pages: write&#10;  id-token: write&#10;jobs:&#10;  build:&#10;    runs-on: ubuntu-latest&#10;    steps:&#10;      - uses: actions/configure-pages@v3&#10;      - uses: actions/checkout@v3&#10;      - uses: actions/setup-node@v3&#10;        with: &#10;          node-version: 20&#10;      - run: npm ci&#10;      - run: npm run build&#10;      - uses: actions/upload-pages-artifact@v1&#10;        with: &#10;          path: ./_site&#10;  deploy:&#10;    needs: build&#10;    runs-on: ubuntu-latest&#10;    environment:&#10;      name: github-pages&#10;      url: ${{ steps.deployment.outputs.page_url }}&#10;    steps:&#10;      - uses: actions/deploy-pages@v2&#10;        id: deployment" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/.gitignore">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/.gitignore" />
+              <option name="updatedContent" value="node_modules/&#10;_site/&#10;.DS_Store&#10;*.log&#10;.env" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/package.json">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/package.json" />
+              <option name="originalContent" value="{&#10;  &quot;name&quot;: &quot;factorio-gift&quot;,&#10;  &quot;version&quot;: &quot;1.0.0&quot;,&#10;  &quot;description&quot;: &quot;&quot;,&#10;  &quot;main&quot;: &quot;index.js&quot;,&#10;  &quot;scripts&quot;: {&#10;    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;&#10;  },&#10;  &quot;repository&quot;: {&#10;    &quot;type&quot;: &quot;git&quot;,&#10;    &quot;url&quot;: &quot;git+https://github.com/daradicsdavid/factorio-gift.git&quot;&#10;  },&#10;  &quot;keywords&quot;: [],&#10;  &quot;author&quot;: &quot;&quot;,&#10;  &quot;license&quot;: &quot;ISC&quot;,&#10;  &quot;type&quot;: &quot;commonjs&quot;,&#10;  &quot;bugs&quot;: {&#10;    &quot;url&quot;: &quot;https://github.com/daradicsdavid/factorio-gift/issues&quot;&#10;  },&#10;  &quot;homepage&quot;: &quot;https://github.com/daradicsdavid/factorio-gift#readme&quot;,&#10;  &quot;devDependencies&quot;: {&#10;    &quot;@11ty/eleventy&quot;: &quot;^3.1.2&quot;,&#10;    &quot;autoprefixer&quot;: &quot;^10.4.21&quot;,&#10;    &quot;cssnano&quot;: &quot;^7.1.0&quot;,&#10;    &quot;postcss&quot;: &quot;^8.5.6&quot;,&#10;    &quot;tailwindcss&quot;: &quot;^4.1.11&quot;&#10;  }&#10;}&#10;" />
+              <option name="updatedContent" value="{&#10;  &quot;name&quot;: &quot;factorio-gift&quot;,&#10;  &quot;version&quot;: &quot;1.0.0&quot;,&#10;  &quot;description&quot;: &quot;&quot;,&#10;  &quot;main&quot;: &quot;index.js&quot;,&#10;  &quot;scripts&quot;: {&#10;    &quot;build:css&quot;: &quot;postcss src/assets/css/tailwind.css -o src/assets/css/main.css&quot;,&#10;    &quot;build:site&quot;: &quot;ELEVENTY_ENV=production npx eleventy&quot;,&#10;    &quot;build&quot;: &quot;npm run build:css &amp;&amp; npm run build:site&quot;,&#10;    &quot;serve&quot;: &quot;npx eleventy --serve&quot;,&#10;    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;&#10;  },&#10;  &quot;repository&quot;: {&#10;    &quot;type&quot;: &quot;git&quot;,&#10;    &quot;url&quot;: &quot;git+https://github.com/daradicsdavid/factorio-gift.git&quot;&#10;  },&#10;  &quot;keywords&quot;: [],&#10;  &quot;author&quot;: &quot;&quot;,&#10;  &quot;license&quot;: &quot;ISC&quot;,&#10;  &quot;type&quot;: &quot;commonjs&quot;,&#10;  &quot;bugs&quot;: {&#10;    &quot;url&quot;: &quot;https://github.com/daradicsdavid/factorio-gift/issues&quot;&#10;  },&#10;  &quot;homepage&quot;: &quot;https://github.com/daradicsdavid/factorio-gift#readme&quot;,&#10;  &quot;devDependencies&quot;: {&#10;    &quot;@11ty/eleventy&quot;: &quot;^3.1.2&quot;,&#10;    &quot;autoprefixer&quot;: &quot;^10.4.21&quot;,&#10;    &quot;cssnano&quot;: &quot;^7.1.0&quot;,&#10;    &quot;postcss&quot;: &quot;^8.5.6&quot;,&#10;    &quot;tailwindcss&quot;: &quot;^4.1.11&quot;&#10;  }&#10;}" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/postcss.config.js">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/postcss.config.js" />
+              <option name="originalContent" value="module.exports = {&#10;  plugins: {&#10;    tailwindcss: {},&#10;    autoprefixer: {},&#10;    cssnano: {}&#10;  }&#10;};&#10;&#10;" />
+              <option name="updatedContent" value="module.exports = {&#10;  plugins: {&#10;    '@tailwindcss/postcss': {},&#10;    autoprefixer: {},&#10;    cssnano: {}&#10;  }&#10;};" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/_includes/base.njk">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/_includes/base.njk" />
+              <option name="updatedContent" value="&lt;!DOCTYPE html&gt;&#10;&lt;html lang=&quot;hu&quot;&gt;&#10;&lt;head&gt;&#10;  &lt;meta charset=&quot;UTF-8&quot;&gt;&#10;  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;&#10;  &lt;title&gt;{{ title }} - Factorio Gift&lt;/title&gt;&#10;  &lt;link rel=&quot;stylesheet&quot; href=&quot;/assets/css/main.css&quot;&gt;&#10;&lt;/head&gt;&#10;&lt;body class=&quot;bg-gray-100&quot;&gt;&#10;  &lt;header class=&quot;bg-factorio-charcoal text-white p-4&quot;&gt;&#10;    &lt;nav class=&quot;flex gap-4 max-w-4xl mx-auto&quot;&gt;&#10;      &lt;a href=&quot;/&quot; class=&quot;bg-factorio-orange px-4 py-2 rounded hover:bg-orange-600 transition-colors&quot;&gt;Kezdőlap&lt;/a&gt;&#10;      &lt;a href=&quot;/parents/&quot; class=&quot;bg-factorio-orange px-4 py-2 rounded hover:bg-orange-600 transition-colors&quot;&gt;Szülőknek&lt;/a&gt;&#10;      &lt;a href=&quot;/faq/&quot; class=&quot;bg-factorio-orange px-4 py-2 rounded hover:bg-orange-600 transition-colors&quot;&gt;GYIK&lt;/a&gt;&#10;    &lt;/nav&gt;&#10;  &lt;/header&gt;&#10;  &#10;  &lt;main class=&quot;max-w-4xl mx-auto p-6&quot;&gt;&#10;    {{ content | safe }}&#10;  &lt;/main&gt;&#10;  &#10;  &lt;footer class=&quot;bg-factorio-charcoal text-white p-4 mt-8&quot;&gt;&#10;    &lt;div class=&quot;max-w-4xl mx-auto text-center&quot;&gt;&#10;      &lt;p&gt;&amp;copy; 2025 Factorio Gift - Statikus mikro-oldal&lt;/p&gt;&#10;    &lt;/div&gt;&#10;  &lt;/footer&gt;&#10;&lt;/body&gt;&#10;&lt;/html&gt;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/assets/css/tailwind.css">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/assets/css/tailwind.css" />
+              <option name="updatedContent" value="@tailwind base;&#10;@tailwind components;&#10;@tailwind utilities;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/faq.md">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/faq.md" />
+              <option name="updatedContent" value="---&#10;layout: base.njk&#10;title: GYIK - Gyakran Ismételt Kérdések&#10;---&#10;&#10;# GYIK – Gyakran Ismételt Kérdések&#10;&#10;## Alapvető Kérdések&#10;&#10;### Mennyi ideig tart kilőni az első rakétát?&#10;Egy átlagos első siker ≈ **20-30 játékóra**, ha teljesen új vagy. Tapasztalt játékosok akár 8-12 óra alatt is megcsinálják, de ne izgulj - ez nem verseny!&#10;&#10;### Milyen rendszerkövetelmények vannak?&#10;- **Minimum**: 4GB RAM, Intel i3 vagy AMD equiv.&#10;- **Ajánlott**: 8GB RAM, Intel i5 vagy jobb&#10;- **Óriásgyárakhoz**: 16GB+ RAM (10000+ óra játékhoz)&#10;&#10;### Lehet offline játszani?&#10;**Igen!** A Factorio teljesen offline játék. Csak letöltéskor és frissítéskor kell internet.&#10;&#10;## Gameplay és Mechanikák&#10;&#10;### Hogyan lehet erőszakmentesen játszani?&#10;Indíts **&quot;Peaceful mode&quot;**-ban a világgenerálás során, vagy írd be játék közben:&#10;&#10;```bash&#10;/c game.player.surface.peaceful_mode = true&#10;```&#10;&#10;### Mi a különbség a nehézségi szintek között?&#10;- **Peaceful**: Nincs támadás, csak építés&#10;- **Normal**: Kiegyensúlyozott élmény&#10;- **Death World**: Extrém kihívás, agresszív ellenségek&#10;&#10;### Lehet menteni és betölteni?&#10;**Természetesen!** A játék automatikusan ment, de manuálisan is menthetsz bármikor (Ctrl+S).&#10;&#10;## Modok és Kiegészítők&#10;&#10;### Milyen modokat érdemes kipróbálni?&#10;**Kezdőknek:**&#10;- *Squeak Through* – könnyebb közlekedés a gyárban&#10;- *Bottleneck* – mutatja a szűk keresztmetszeteket&#10;- *Helmod* – gyártás-tervezés kalkulátor&#10;&#10;**Haladóknak:**&#10;- *Bob's Mods* – új anyagok és komplexebb receptek&#10;- *Angel's Mods* – teljes metallurgia újragondolás&#10;- *Space Exploration* – több bolygó, űrutazás&#10;&#10;### Hol találok modokat?&#10;A játékban beépített **Mod Portal** vagy a weboldalon: mods.factorio.com&#10;&#10;## Multiplayer és Közösség&#10;&#10;### Hogyan játszhatok barátokkal?&#10;1. **Helyi hálózat**: LAN party módban&#10;2. **Internet**: Egyik játékos hosztol, mások csatlakoznak&#10;3. **Dedikált szerver**: 24/7 közös világ&#10;&#10;### Van magyar közösség?&#10;**Igen!** Keress rá:&#10;- Discord szerverek&#10;- Reddit: r/factorio magyar szál&#10;- Steam közösségi csoportok&#10;&#10;## Technikai Problémák&#10;&#10;### Lassú a játék nagy gyárakkal?&#10;**Optimalizálási tippek:**&#10;- Kapcsold ki a füstöt/részecskéket&#10;- Csökkentsd a sprite felbontást&#10;- Használj UPS-friendly tervezést (kevesebb robot, több szalag)&#10;&#10;### Frissítések törhetik a mentést?&#10;**Ritkán.** A fejlesztők nagy hangsúlyt fektetnek a kompatibilitásra. Mindig készíts biztonsági mentést nagy frissítések előtt!&#10;&#10;### Mac/Linux támogatás?&#10;**Teljes támogatás** mindkét platformon! Natív kliensek vannak.&#10;&#10;## Vásárlás és Árformálás&#10;&#10;### Mikor van akció?&#10;A Factorio **ritkán van leárazva** - a fejlesztők szerint a játék értéke állandó. Alkalmanként 10-20% kedvezmény Steam sale-ken.&#10;&#10;### Megéri a teljes árat?&#10;**Abszolút!** 30-35€ ellenében akár **1000+ órányi** játékélmény. Ez 0.03€/óra arány!&#10;&#10;### Van demo?&#10;**Igen!** Ingyenes demo elérhető a hivatalos weboldalon és Steamen is.&#10;&#10;---&#10;&#10;*További kérdések? Csatlakozz a közösséghez - mindig van valaki, aki segít!*" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/index.md">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/index.md" />
+              <option name="updatedContent" value="---&#10;layout: base.njk&#10;title: Factorio - Építsd fel a gyáradat!&#10;---&#10;&#10;# Factorio - A Végső Gyárépítő Játék&#10;&#10;Üdvözlünk a Factorio világában! Ez a játék az automatizálásról, a termelésről és a hatékonyságról szól. Építsd fel saját ipari birodalmadat egy idegen bolygón!&#10;&#10;## Miért érdemes kipróbálni?&#10;&#10;###  Komplex Gyárépítés&#10;- **Szállítószalagok**: 15 különböző sebességű szalag (8, 15, 30 item/sec)&#10;- **Gépek**: 300+ különböző gép és berendezés&#10;- **Logisztika**: Robotok, vonatok, csövek - minden automatizálható&#10;&#10;###  Technológiai Fejlődés&#10;- **140+ kutatás**: Alapanyagoktól a rakétakilövésig&#10;- **Tudományos csomagok**: 7 különböző típus (piros, zöld, kék, lila, sárga, fehér, űr)&#10;- **Progresszió**: Kézi munkától a teljesen automatizált gyárig&#10;&#10;### ⚡ Energia Management&#10;- **Áramtermelés**: Gőzgépek (900kW) → Napelem (60kW) → Nukleáris reaktor (40MW)&#10;- **Hatékonyság**: Optimalizáld az energia felhasználást&#10;- **Akkumulátorok**: Tározd az energiát a sötét órákra&#10;&#10;## Gameplay Útmutató&#10;&#10;### Első Lépések (0-2 óra)&#10;1. **Kézi bányászat**: Vas, réz, szén, kő gyűjtése&#10;2. **Alapgépek**: Olvasztók (1 item/0.32s), összeszerelők&#10;3. **Első automatizálás**: Vaslemez gyártás (1.6/sec sebesség)&#10;&#10;### Középhaladó (2-10 óra)&#10;1. **Elektromosság**: Gőzgépek + kazánok (1.8MW rendszer)&#10;2. **Kutatás**: Labor felépítése, alapkutatások&#10;3. **Olaj**: Finomító (5 különböző termék), kémiai üzemek&#10;&#10;### Haladó (10-30 óra)&#10;1. **Vasúti hálózat**: Teherszállítás nagy távolságra&#10;2. **Logisztikai robotok**: 50-es sebességű automatizálás&#10;3. **Rakéta**: Végcél - űrtechnológiai kutatáshoz&#10;&#10;## Tippek Kezdőknek&#10;&#10;### Tervezés&#10;- **Helyfoglalás**: Hagyj 2-3x több helyet, mint amire szerinted szükség van&#10;- **Főbusz**: Központi szállítószalag-rendszer minden alapanyaghoz&#10;- **Modularitás**: Kis, átlátható gyáregységek&#10;&#10;### Optimalizálás&#10;- **Arányok**: 1 réz olvasztó = 0.7 vas olvasztó (réz/vas igény alapján)&#10;- **Szűk keresztmetszetek**: Mindig a leglassabb elem határozza meg a sebességet&#10;- **Pufferek**: Köztes tárolók egyenletes működéshez&#10;&#10;## Közösség és Modok&#10;&#10;### Népszerű Modok&#10;- **Quality of Life**: Squeak Through, Even Distribution&#10;- **Kihívás**: Bob's Mods, Angel's Mods (10x komplexitás)&#10;- **Tervezés**: Helmod, Factory Planner&#10;&#10;### Multiplayer&#10;- Akár 500+ játékos egy szerveren&#10;- Kooperatív vagy kompetitív módok&#10;- Megosztott projektek és tervek&#10;&#10;---&#10;&#10;*Készen állsz az ipari forradalomra? Töltsd le a Factorio-t és kezdd el építeni a jövő gyárát már ma!*" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/parents/index.md">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/parents/index.md" />
+              <option name="updatedContent" value="---&#10;layout: base.njk&#10;title: Szülőknek - Miért jó a Factorio?&#10;---&#10;&#10;# Szülőknek - Miért ajánljuk a Factorio-t?&#10;&#10;## Oktatási Értékek&#10;&#10;###  STEM Készségek Fejlesztése&#10;A Factorio nem csak egy játék - **valós mérnöki problémák** szimulációja:&#10;&#10;- **Matematika**: Arányok, hatékonyság-számítás, optimalizálás&#10;- **Logika**: Rendszertervezés, problémamegoldás, hibakeresés  &#10;- **Programozás**: Áramköri logika, feltételes utasítások&#10;- **Mérnöki gondolkodás**: Tervezés, implementálás, iteráció&#10;&#10;###  Konkrét Példák&#10;- **Arányszámítás**: &quot;Ha 1 réz olvasztó 0.32 másodperc alatt készít 1 lemezt, mennyi kell 50/sec termeléshez?&quot;&#10;- **Optimalizálás**: Minimális nyersanyag-felhasználás, maximális kimenet&#10;- **Rendszerintegráció**: Különálló gyárrészek összehangolása&#10;&#10;## Szakértői Vélemények&#10;&#10;&gt; *&quot;A Factorio olyan készségeket fejleszt, amikre a jövő munkahelyein szükség lesz. A gyerekek megtanulják a komplex rendszerek tervezését és az automatizálás alapjait.&quot;*  &#10;&gt; **- Financial Times, Technology in Education rovatából**&#10;&#10;### Pedagógiai Előnyök&#10;- **Projektmenedzsment**: Nagy, összetett feladatok lebontása kis részekre&#10;- **Kitartás**: Hosszú távú célok elérése, fokozatos fejlődés&#10;- **Kreativitás**: Többféle megoldás ugyanarra a problémára&#10;&#10;## Biztonság és Kontroll&#10;&#10;###  Gaming Platform Támogatás&#10;- **PC**: Windows, Mac, Linux&#10;- **Nintendo Switch**: 2022-től elérhető (családbarát platform)&#10;- **Offline játék**: Internet nélkül is működik&#10;&#10;###  Közösségi Aspektusok&#10;- **Pozitív közösség**: Segítőkész, tudásmegosztó játékosok&#10;- **Erőszakmentes**: Választható &quot;Peaceful&quot; mód&#10;- **Oktatási célú**: Sok tanár használja matematikaórán&#10;&#10;## Életkor és Készségszint&#10;&#10;### Ajánlott Életkor: 10+&#10;- **Olvasástudás**: Szükséges a receptek és leírások megértéséhez&#10;- **Alapvető matematika**: Összeadás, szorzás, arányok&#10;- **Türelem**: Komplex projektek több órás/napos munkát igényelnek&#10;&#10;### Progresszív Tanulás&#10;1. **Alapok** (5-10 óra): Kézi gyártás, egyszerű gépek&#10;2. **Automatizálás** (10-30 óra): Szállítószalagok, alapvető logika&#10;3. **Komplex rendszerek** (30+ óra): Vonatok, robotok, programozás&#10;&#10;## Gyakori Szülői Kérdések&#10;&#10;### &quot;Nem túl bonyolult?&quot;&#10;A játék **fokozatosan** vezeti be a koncepciókat. Niemand nem kell mindent egyszerre megtanulni.&#10;&#10;### &quot;Mennyi időt vesz igénybe?&quot;&#10;- **Rugalmas**: Bármikor szüneteltethető és folytatható&#10;- **Első siker**: 20-30 óra egy rakéta kilövéséhez&#10;- **Hosszú távú**: Évekig játszható, mindig új kihívásokkal&#10;&#10;### &quot;Közösségi problémák?&quot;&#10;A Factorio közösség **notorikusan barátságos és segítőkész**. A játék kooperációra ösztönöz, nem versengésre.&#10;&#10;---&#10;&#10;## Következő Lépések&#10;&#10;1. **Demo**: Próbáljátok ki ingyen a hivatalos demo-t&#10;2. **Közös játék**: Játsszatok együtt - remek családi aktivitás&#10;3. **Oktatási források**: Keressetek YouTube tutorialokat magyar nyelven&#10;&#10;*A Factorio nem csak szórakoztat - felkészíti a gyerekeket a 21. század kihívásaira.*" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/tailwind.config.js">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/tailwind.config.js" />
+              <option name="updatedContent" value="module.exports = {&#10;  content: [&quot;./src/**/*.{html,md,njk}&quot;],&#10;  theme: {&#10;    extend: {&#10;      colors: {&#10;        factorio: { orange: &quot;#d97b32&quot;, charcoal: &quot;#333333&quot;, teal: &quot;#008080&quot; }&#10;      }&#10;    }&#10;  }&#10;};" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
